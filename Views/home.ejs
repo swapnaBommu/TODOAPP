@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title%>
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <h1 id="heading">TODO APP</h1>
+        <form class="grid-container" action="/create-todo" method="POST">
+            <div class="item1">
+                <label for="description">DESCRIPTION</label><br>
+                <input class="item" type="text" name="description" placeholder="What do  you need to do?" required>
+            </div>
+            <div class="item2">
+                <label for="category">CATEGORY</label>
+                <select name="category" id="category" class="item"  required>
+                    
+                  <option value="">Choose a category:</option>
+                  <option value="personal">PERSONAL</option>
+                  <option value="work">WORK</option>
+                  <option value="school">SCHOOL</option>
+                </select>
+                
+                <!-- <input class="item" type="text" name="category" placeholder="Choose a category:" required> -->
+            </div>
+            <div class="item3">
+                <label for="date">DUE DATE</label><br>
+            <input type="date" class="item" name="date" required>
+            </div>  
+            <div class="item4">
+                <i class="fa-sharp  fa-plus-large"></i>
+                <button type="submit" class="btn">
+                    
+                    Add task
+                </button>
+            </div>
+            
+        </form>
+
+        <!-- <form action="/create-todo" method="POST">
+
+            <label for="description">DESCRIPTION</label><br>
+            <input id="description" type="text" name="description" placeholder="What do  you need to do?" required>
+            
+            <label>CATEGORY</label>
+            <input id="category" class="item" type="text" name="category" placeholder="Enter category" required>
+           
+            <label for="date">DUE DATE</label>
+            <input id="date" type="date" class="item" name="date" required>
+            
+          
+        </form> -->
+          
+       
+        <div>
+            <ul>
+                   
+                <% for (let i of todo_list) { %> 
+                   <div class="contact"> 
+                        <li>
+                            <p><%= i.description %></p>
+                            <p><%= i.category %></p>
+                            <p><%= i.date %></p>
+                        </li>
+                    </div>
+                    <div class="delete-button">
+                        <a href="/delete-todo/?id=<%= i.id %>">
+                            delete
+                        </a>
+                    </div>
+                <% } %>
+            </ul>
+        </div>
+
+       
+        <!-- <script type="text/javascript" src="/js/home.js"></script> -->
+    </body>
+</html>

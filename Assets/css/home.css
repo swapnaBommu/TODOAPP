@@ -1,0 +1,75 @@
+body{
+    padding: 0px;
+    width: 70%;
+    border: 2px solid black;
+    margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#heading 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    color:lightgreen;
+}
+
+#description{
+    padding:5px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-gap: 0px;
+    margin-top: 30px;
+  }
+  
+  .grid-container > div {
+    border: 2px solid green;
+    padding: 10px 0;
+  }
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: block;
+    border-right: none !important;
+    border-left: none !important;
+  }
+  .item2 {
+    grid-column-start: 1;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+  }
+  .item3 {
+    grid-column-start: 2;
+    border-top: none !important;
+    border-right: none !important;
+  }
+  .item4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: block;
+    text-align: center;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+  }
+  .grid-container > div  > .item{
+    height: 35px;
+    width: 95%;
+    border: none;
+    outline: none;
+    margin:5px;
+  }
+  .grid-container > div >label{
+    margin:5px;
+  }
+  .btn{
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+  }
+ 
